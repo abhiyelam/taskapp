@@ -1,0 +1,33 @@
+<p>task-form works!</p>
+<div class="container mt-4">
+    <h2>{{ isEdit ? 'Edit' : 'Add' }} Task</h2>
+  
+    <form (ngSubmit)="save()">
+      <input
+        type="text"
+        class="form-control mb-3"
+        [(ngModel)]="task.title"
+        name="title"
+        placeholder="Enter Task"
+        required
+      />
+  
+      <div class="form-check mb-3">
+        <input
+          type="checkbox"
+          class="form-check-input"
+          [(ngModel)]="task.completed"
+          name="completed"
+        />
+  
+        <label class="form-check-label">
+          Completed
+        </label>
+      </div>
+  
+      <button class="btn btn-success">
+        Save
+      </button>
+    </form>
+  </div>
+  
