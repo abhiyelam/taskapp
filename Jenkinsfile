@@ -1,4 +1,3 @@
-
 pipeline {
     agent any
 
@@ -39,6 +38,7 @@ pipeline {
     post {
         success {
             echo "Deployment Successful 🚀"
+            echo "Application URL: http://localhost:${PORT}"
         }
         failure {
             echo "Build Failed ❌"
