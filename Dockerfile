@@ -7,12 +7,13 @@ COPY package*.json ./
 RUN npm install
 
 COPY . .
-RUN npm run build --configuration production
+
+RUN npx ng build --configuration production
 
 # ---------- Runtime ----------
 FROM nginx:alpine
 
-COPY --from=build /app/dist /usr/share/nginx/html
+COPY --from=build /app/dist/taskapp /usr/share/nginx/html
 
 EXPOSE 80
 
